@@ -21,36 +21,20 @@ Name :
             </div>
             <div class="row">
 
-                <?php 
-        $blog_args = array(
-        'post_type'     =>  'post',
-        /*NO OF POSTS ON PAGE*/
-        'posts_per_page' => 9
-        );
+        <?php
+            $blog_args = array(
+                'post_type'     =>  'post',
+                /*NO OF POSTS ON PAGE*/
+                'posts_per_page' => 9
+            );
         $blog_posts = new WP_Query($blog_args);
         while($blog_posts->have_posts()) {
-            $blog_posts->the_post();
+                    $blog_posts->the_post();
         ?>
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-blog">
-                        <div class="blog-img">
-                            <a href="<?php the_permalink() ?>" data-toggle="modal">
-                                <?php the_post_thumbnail('homepage-thumb') ?>
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <a href="<?php the_permalink() ?>" data-toggle="modal">
-                                <h3 class="subtitle"><?php the_title() ?></h3>
-                            </a>
-                            <h5 class="date"><?php the_date(); ?></h5>
-                            <?php the_excerpt() ?>
-                            <a class="btn" href="<?php the_permalink() ?>" data-toggle="modal">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                <?php get_template_part('template-parts/small', 'content'); ?>
 
-                   <?php } ?>
-                   <?php wp_reset_postdata(); ?>
+        <?php } ?>
+        <?php wp_reset_postdata(); ?>
                 
                                                     <!--INTERNAL POST-->
             </div>
