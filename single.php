@@ -17,7 +17,7 @@ the file
 				the_post();
             ?>
 
-                    <div class="modal-content fix">
+                    <div id="post-<?php the_ID(); ?>" <?php post_class( 'modal-content fix' ); ?> >
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-8 col-lg-offset-2">

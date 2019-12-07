@@ -4,10 +4,10 @@
 */
 ?>
 <!doctype html>
-<html lang="en">
+<html <?php language_attributes(); ?> >
 <head>
     <!--meta tags-->
-    <meta charset="utf-8">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="one page business template based on HTML5">
     <meta name="keywords" content="multipage, business, agency, creative, corporate, responsive, clean, modern">
@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--template title-->
-    <title>Alexandra - barber shop html template</title>
+    <title><?php wp_title(); ?></title>
 
     <!--==========Favicon==========-->
 
@@ -68,7 +68,7 @@
     <?php wp_head() ?>
 
 </head>
-<body>
+<body <?php body_class(); ?> >
     <!--preloader starts-->
 
     <div class="loader_bg"><div class="loader"></div></div>

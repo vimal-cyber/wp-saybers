@@ -35,6 +35,9 @@ if ( ! function_exists( 'saybers_theme_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
+        // Title Name Alteration
+        require get_template_directory( ).'/inc/minor-changes.php';
+
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
