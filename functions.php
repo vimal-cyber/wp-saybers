@@ -80,13 +80,13 @@ if ( ! function_exists( 'saybers_theme_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 40,
-			'width'       => 40,
-			'flex-width'  => true,
-			'flex-height' => true,
+		'height'      => 40,
+		'width'       => 40,
+		'flex-height' => true,
 		) );
 	}
 endif;
+
 add_action( 'after_setup_theme', 'saybers_theme_setup' );
 
 /**
@@ -163,3 +163,4 @@ require get_template_directory( ).'/inc/install-plugins.php';
 
 // One click demo import
 require_once get_template_directory( ).'/inc/demo-imports.php';
+

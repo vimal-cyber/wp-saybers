@@ -750,6 +750,10 @@ img {
     height: auto;
 }
 
+section.content-area {
+    padding-top: 10px;
+}
+
 .section-padding{
     padding: 80px 0;
 }
@@ -910,7 +914,7 @@ p.line{
 }
 
 .sticky_navigation .main-menu{
-    margin-top: 0;
+    margin-top: 0px;
 }
 
 .sticky_navigation .navbar-brand, .sticky_navigation .navbar-brand span {
@@ -964,6 +968,10 @@ p.line{
 
 .navbar-brand img {
     width: 45px;
+}
+
+img.custom-logo {
+    margin-top: 9px;
 }
 
 .navbar-brand:focus, .navbar-brand:hover {
@@ -1865,6 +1873,7 @@ a.bordered-btn:hover {
 div.modal-content.fix {
     
     border-radius: 0px;
+    border: 0px;
 }
 
 .news-modal .modal-content {
