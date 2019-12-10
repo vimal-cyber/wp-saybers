@@ -507,6 +507,27 @@ template {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+.pagination {
+    padding: 10px;
+    text-align: center;
+    width: -webkit-fill-available;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #333;
+    border-radius: 100px;
+    border: 0.5px solid #333;
+}
+.pagination span {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #bb8c4b;
+    color: #333;
+    border-radius: 100px;
+    border: 0.5px solid #333;
+}
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -543,6 +564,18 @@ template {
 
 .bypostauthor {
 	display: block;
+}
+/*--------------------------------------------------------------
+## next previous post
+--------------------------------------------------------------*/
+div.nav-linls {
+    width: -webkit-fill-available;
+    margin-bottom: 15px;
+    display: inline-flex;
+}
+
+div.nav-next {
+    margin-left: auto;
 }
 
 /*--------------------------------------------------------------

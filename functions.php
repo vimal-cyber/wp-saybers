@@ -163,4 +163,3 @@ require get_template_directory( ).'/inc/install-plugins.php';
 
 // One click demo import
 require_once get_template_directory( ).'/inc/demo-imports.php';
-
