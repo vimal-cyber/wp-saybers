@@ -22,6 +22,9 @@ the file
                                 </p>
                                 <?php the_content(); ?>
                             </div>
+                            <div class="tags">
+                                <?php the_tags(); ?>
+                            </div>
                             <?php comments_template(); ?>
                         </div>
                     </div>

@@ -44,6 +44,7 @@ if ( ! function_exists( 'saybers_theme_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+        set_post_thumbnail_size( 450, 300 );
         add_image_size( 'homepage-thumb', 450, 300, true );
         add_image_size( 'portfolio-thumb', 800, 600, true );
         add_image_size( 'team-thumb', 257, 380, true );
@@ -111,27 +112,45 @@ add_action( 'after_setup_theme', 'saybers_content_width', 0 );
  */
 function saybers_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'saybers' ),
+		'name'          => esc_html__( 'Footer Left', 'saybers' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'saybers' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_widget' => '<div class="block side-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	) );
+
+    register_sidebar( array(
+		'name'          => esc_html__( 'Footer Right', 'saybers' ),
+		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'Add widgets here.', 'saybers' ),
+		'before_widget' => '<div class="block side-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	) );
+
+    register_sidebar( array(
+		'name'          => esc_html__( 'Footer Center', 'saybers' ),
+		'id'            => 'sidebar-3',
+		'description'   => esc_html__( 'Add widgets here.', 'saybers' ),
+		'before_widget' => '<div class="block side-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'saybers_widgets_init' );
-/*function saybers_theme_setup(){
-  add_theme_support( 'title-tag' );
-  add_theme_support( 'custom-logo' );
-  add_theme_support( 'post-thumbnails' );
-  add_theme_support( 'automatic-feed-links' );
-  add_image_size( 'home-featured', 680, 400, array( center ,center ) );
-  
-  register_nav_menus( array( 
-      'primary'     => __( 'Primary Menu', 'saybers')
-  ) );
-};*/
+
+/**
+* Registers an editor stylesheet for the theme.
+*/
+function wpdocs_theme_add_editor_styles() {
+add_editor_style( 'custom-editor-style.css' );
+}
+add_action( 'admin_init', 'wpdocs_theme_add_editor_styles' );
+
 function saybers_scripts(){
     wp_enqueue_style('style', get_stylesheet_uri());
     wp_enqueue_script('jquery');
@@ -150,16 +169,10 @@ function saybers_scripts(){
 add_action('wp_enqueue_scripts','saybers_scripts');
 
 // CUSTOM POSTS TYPES
-
-require get_template_directory( ).'/inc/portfolio.php';
-require get_template_directory( ).'/inc/testimonial.php';
-require get_template_directory( ).'/inc/team.php';
-require get_template_directory( ).'/inc/plugins/kirki/kirki.php';
+// Kirki cogiguration file
 require get_template_directory( ).'/inc/kirki-config.php';
-require get_template_directory( ).'/inc/service.php';
 // TGM plugin activation
 require_once get_template_directory( ).'/inc/class-tgm-plugin-activation.php';
 require get_template_directory( ).'/inc/install-plugins.php';
-
 // One click demo import
 require_once get_template_directory( ).'/inc/demo-imports.php';

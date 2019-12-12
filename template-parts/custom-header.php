@@ -44,6 +44,8 @@
 
     <!--responsive css-->
     <link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_directory_uri()) ?>/assets/css/responsive.css">
+    <!--Comments js power wp-->
+    <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
     <style>
     
 .main-menu {

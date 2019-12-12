@@ -60,25 +60,25 @@ function saybers_register_required_plugins() {
 
 		// This is an example of how to include a plugin bundled with a theme.
 //		array(
-//			'name'               => 'TGM Plugin', // The plugin name.
-//			'slug'               => 'tgm-example-plugin', // The plugin slug (typically the folder name).
-//			'source'             => get_template_directory() . '/inc/plugins/TGM-Plugin-Activation-2.6.1-saybers.zip', // The plugin source.
+//			'name'               => 'SAYBERS MAIN', // The plugin name.
+//			'slug'               => 'saybers-main', // The plugin slug (typically the folder name).
+//			'source'             => get_template_directory() . '/inc/plugins/saybers-main.zip', // The plugin source.
 //			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
 //			'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
-//			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-//			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+//			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+//			'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 //			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
 //			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 //		),
 
 		// This is an example of how to include a plugin from an arbitrary external source in your theme.
-//		array(
-//			'name'         => 'Advanced Custom Fields', // The plugin name.
-//			'slug'         => 'advanced-custom-fields', // The plugin slug (typically the folder name).
-//			'source'       => 'https://downloads.wordpress.org/plugin/advanced-custom-fields.5.8.7.zip', // The plugin source.
-//			'required'     => true, // If false, the plugin is only 'recommended' instead of required.
-//			'external_url' => 'https://github.com/thomasgriffin/New-Media-Image-Uploader', // If set, overrides default API URL and points to an external URL.
-//		),
+		array(
+			'name'         => 'SAYBERS MAIN', // The plugin name.
+			'slug'         => 'saybers-main', // The plugin slug (typically the folder name).
+			'source'       => 'https://github.com/umer2001/plugins/raw/master/saybers-main.zip', // The plugin source.
+			'required'     => true, // If false, the plugin is only 'recommended' instead of required.
+			'external_url' => 'https://github.com/umer2001/plugins/raw/master/saybers-main.zip', // If set, overrides default API URL and points to an external URL.
+		),
 
 		// This is an example of how to include a plugin from a GitHub repository in your theme.
 		// This presumes that the plugin code is based in the root of the GitHub repository
@@ -90,11 +90,11 @@ function saybers_register_required_plugins() {
 //		),
 //
 //		// This is an example of how to include a plugin from the WordPress Plugin Repository.
-//		array(
-//			'name'      => 'BuddyPress',
-//			'slug'      => 'buddypress',
-//			'required'  => false,
-//		),
+		array(
+			'name'      => 'Kirki Customizer Framework',
+			'slug'      => 'kirki',
+			'required'  => true,
+		),
 
 		// This is an example of the use of 'is_callable' functionality. A user could - for instance -
 		// have WPSEO installed *or* WPSEO Premium. The slug would in that last case be different, i.e.

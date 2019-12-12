@@ -2,7 +2,7 @@
 Theme Name: saybers
 Theme URI: http://underscores.me/
 Author: Umer Farooq
-Author URI: http://underscores.me/
+Author URI: https://stackoverflow.com/users/story/11566896
 Description: Description
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -293,6 +293,36 @@ progress {
 	vertical-align: baseline;
 }
 
+input.search-field {
+    margin-bottom: 18px;
+    margin-left: -8px;
+    padding: 10px 0px;
+    color: #6c6c6c;
+    background-color: #fff;
+    border: 1px solid #888888;
+    border-radius: 20px;
+}
+
+input.search-submit {
+    border: 1px solid #BB8C4B;
+    border-radius: 50px;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 25px;
+    -webkit-transition: .3s;
+    transition: .3s;
+    background: #BB8C4B;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+input.search-submit:hover {
+    background: #262626;
+    color: #fff;
+}
+
 /**
  * Remove the default vertical scrollbar in IE 10+.
  */
@@ -495,6 +525,43 @@ template {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+div.side-l {
+    width: 30%;
+    float: left;
+    margin-left: 75px;
+}
+
+div.block.side-widget h3 {
+    color: #e64747;
+}
+
+div.block.side-widget p {
+    color: #ea9c2c;
+}
+
+.side-widget ul {
+    margin-left: 20px;
+}
+
+.side-widget li,
+.side-widget li a {
+    color: #ea9c2c;
+}
+
+div.side {
+    width: 30%;
+    float: right;
+    margin-right: 5px;
+}
+
+div.block {
+    padding: 0px 15px 0px 15px;
+    overflow: hidden;
+}
+
 .widget {
 	margin: 0 0 1.5em;
 	/* Make sure select elements fit in widgets. */
@@ -568,7 +635,7 @@ template {
 /*--------------------------------------------------------------
 ## next previous post
 --------------------------------------------------------------*/
-div.nav-linls {
+div.nav-links {
     width: -webkit-fill-available;
     margin-bottom: 15px;
     display: inline-flex;
