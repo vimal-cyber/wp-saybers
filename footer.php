@@ -20,7 +20,7 @@
                     <?php endif; ?>
                 </div>
                 <div class="col-md-12 text-center">
-                    <p>&copy; 2019 Alexandra. All Rights Reserved</p>
+                    <p>&copy; 2019 <?php bloginfo('name'); ?> All Rights Reserved</p>
                 </div>
             </div>
         </div>

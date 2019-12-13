@@ -378,9 +378,6 @@ $text_contact_dec = Kirki::get_option( 'saybers_options', 'text_contact_dec' );
                             <li><span class="pri">Hair Wash</span> <span class="daam">$12</span></li>
                             <li><span class="pri">Hair Wash</span> <span class="daam">$12</span></li>
                             <li><span class="pri">Hair Wash</span> <span class="daam">$12</span></li>
-                            <li><span class="pri">Hair Wash</span> <span class="daam">$12</span></li>
-                            <li><span class="pri">Hair Wash</span> <span class="daam">$12</span></li>
-                            <li><span class="pri">Hair Wash</span> <span class="daam">$12</span></li>
                         </ul>
                     </div>
                     <a href="#" class="bordered-btn">Appointment</a>
@@ -393,9 +390,6 @@ $text_contact_dec = Kirki::get_option( 'saybers_options', 'text_contact_dec' );
 
                     <div class="pricing-lists">
                         <ul>
-                            <li><span class="pri">Hair Cutting</span> <span class="daam">$12</span></li>
-                            <li><span class="pri">Hair Cutting</span> <span class="daam">$12</span></li>
-                            <li><span class="pri">Hair Cutting</span> <span class="daam">$12</span></li>
                             <li><span class="pri">Hair Cutting</span> <span class="daam">$12</span></li>
                             <li><span class="pri">Hair Cutting</span> <span class="daam">$12</span></li>
                             <li><span class="pri">Hair Cutting</span> <span class="daam">$12</span></li>
@@ -413,9 +407,6 @@ $text_contact_dec = Kirki::get_option( 'saybers_options', 'text_contact_dec' );
 
                     <div class="pricing-lists">
                         <ul>
-                            <li><span class="pri">Hair Trimming</span> <span class="daam">$12</span></li>
-                            <li><span class="pri">Hair Trimming</span> <span class="daam">$12</span></li>
-                            <li><span class="pri">Hair Trimming</span> <span class="daam">$12</span></li>
                             <li><span class="pri">Hair Trimming</span> <span class="daam">$12</span></li>
                             <li><span class="pri">Hair Trimming</span> <span class="daam">$12</span></li>
                             <li><span class="pri">Hair Trimming</span> <span class="daam">$12</span></li>

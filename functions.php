@@ -44,7 +44,7 @@ if ( ! function_exists( 'saybers_theme_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-        set_post_thumbnail_size( 450, 300 );
+        //set_post_thumbnail_size( 450, 300 );
         add_image_size( 'homepage-thumb', 450, 300, true );
         add_image_size( 'portfolio-thumb', 800, 600, true );
         add_image_size( 'team-thumb', 257, 380, true );
