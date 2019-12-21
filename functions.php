@@ -169,8 +169,8 @@ function saybers_scripts(){
 add_action('wp_enqueue_scripts','saybers_scripts');
 
 // CUSTOM POSTS TYPES
-// Kirki cogiguration file
-require get_template_directory( ).'/inc/kirki-config.php';
+
+require get_template_directory( ).'/inc/customizer.php';
 // TGM plugin activation
 require_once get_template_directory( ).'/inc/class-tgm-plugin-activation.php';
 require get_template_directory( ).'/inc/install-plugins.php';

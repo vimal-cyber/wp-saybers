@@ -14,27 +14,6 @@ $linkedin_profile_link  = get_field('linkedin_profile_link');
 // Services section
 $service_icon  = get_field('service_icon');
 $service_description  = get_field('service_description');
-// Kirki Framework variables
-$text_about = Kirki::get_option( 'saybers_about_us', 'text_about' );
-$text_about_dec = Kirki::get_option( 'saybers_options', 'text_about_dec' );
-$link_about = Kirki::get_option( 'saybers_options', 'link_about' );
-$image_about = Kirki::get_option( 'saybers_options', 'image_about' );
-$text_about_sub_heading = Kirki::get_option( 'saybers_options', 'text_about_sub_heading' );
-$text_about_sub_dec = Kirki::get_option( 'saybers_options', 'text_about_sub_dec' );
-$text_services = Kirki::get_option( 'saybers_options', 'text_services' );
-$text_services_dec = Kirki::get_option( 'saybers_options', 'text_services_dec' );
-$text_team = Kirki::get_option( 'saybers_options', 'text_team' );
-$text_team_dec = Kirki::get_option( 'saybers_options', 'text_team_dec' );
-$text_work = Kirki::get_option( 'saybers_options', 'text_work' );
-$text_work_dec = Kirki::get_option( 'saybers_options', 'text_work_dec' );
-$text_pricing = Kirki::get_option( 'saybers_options', 'text_pricing' );
-$text_pricing_dec = Kirki::get_option( 'saybers_options', 'text_pricing_dec' );
-$text_blog = Kirki::get_option( 'saybers_options', 'text_blog' );
-$text_blog_dec = Kirki::get_option( 'saybers_options', 'text_blog_dec' );
-$text_testimonial = Kirki::get_option( 'saybers_options', 'text_testimonial' );
-$text_testimonial_dec = Kirki::get_option( 'saybers_options', 'text_testimonial_dec' );
-$text_contact = Kirki::get_option( 'saybers_options', 'text_contact' );
-$text_contact_dec = Kirki::get_option( 'saybers_options', 'text_contact_dec' );
 
 ?>
 <?php get_header(); ?>
@@ -82,15 +61,15 @@ $text_contact_dec = Kirki::get_option( 'saybers_options', 'text_contact_dec' );
 <!--banner area ends-->
 
 <!--about area starts-->
-<?php if ( true == get_theme_mod( 'toggle_about_us', true ) ) : ?>
+<?php if ( "on" == get_theme_mod( 'toggle_about_us', 'on' ) ) : ?>
 <div id="about" class="about-area section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-header">
-                    <h2><?php echo $text_about; ?></h2>
+                    <h2><?php echo get_theme_mod( 'text_about','About Us' ) ?></h2>
                     <div class="line"><img src="<?php echo get_site_icon_url() ?>" alt=""></div>
-                    <p class="sub-head"><?php echo $text_about_dec; ?><?php echo get_option('page_on_front'); ?><?php echo get_the_ID() ?></p>
+                    <p class="sub-head"><?php echo get_theme_mod( 'text_about_dec','Lorem ipsum dolor sit amet consectetur adipisicing elit' ) ?><?php echo get_option('page_on_front'); ?><?php echo get_the_ID() ?></p>
                 </div>
             </div>
         </div>
@@ -99,11 +78,11 @@ $text_contact_dec = Kirki::get_option( 'saybers_options', 'text_contact_dec' );
             <div class="col-md-5 col-sm-12 col-xs-12">
                 <div class="about-video">
                     <div class="single-video">
-                        <a href="<?php echo $link_about; ?>" class="video-play mfp-iframe">
+                        <a href="<?php echo get_theme_mod( 'link_about','https://www.youtube.com/watch?v=E7A5rXHp_AI' ) ?>" class="video-play mfp-iframe">
                             <!--change video url-->
                             <i class="fa fa-play"></i>
                         </a>
-                        <img src="<?php echo $image_about; ?>" alt="about image">
+                        <img src="<?php echo wp_get_attachment_url( get_theme_mod( 'image_about','images/about/about.jpg' ) ); ?>" alt="about image">
                         <!--change image-->
                     </div>
                 </div>
@@ -112,9 +91,9 @@ $text_contact_dec = Kirki::get_option( 'saybers_options', 'text_contact_dec' );
             <div class="col-md-7 col-sm-12 col-xs-12">
                 <div class="about-main">
                     <!--<h3>Why Choose Us?</h3>-->
-                    <h2><?php echo $text_about_sub_heading; ?></h2>
+                    <h2><?php echo get_theme_mod( 'text_about_sub_heading','25 Years of Experience' ) ?></h2>
                     <div class="single-about">
-                        <p><?php echo $text_about_sub_dec; ?></p>
+                        <p><?php echo get_theme_mod( 'text_about_sub_dec','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.' ) ?></p>
                     </div>
                     <a href="#contact" class="smooth-menu">Contact Us</a>
                 </div>
@@ -128,15 +107,15 @@ $text_contact_dec = Kirki::get_option( 'saybers_options', 'text_contact_dec' );
 <!--about area ends-->
 
 <!--Services Area Starts-->
-<?php if ( true == get_theme_mod( 'toggle_our_services', true ) ) : ?>
+<?php if ( "on" == get_theme_mod( 'toggle_our_services', 'on' ) ) : ?>
 <div id="services" class="services-area section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-header">
-                    <h2><?php echo $text_services; ?></h2>
+                    <h2><?php echo get_theme_mod( 'text_services','Our Services' ) ?></h2>
                     <div class="line"><img src="<?php  echo get_site_icon_url() ?>" alt=""></div>
-                    <p class="sub-head"><?php echo $text_services_dec; ?></p>
+                    <p class="sub-head"><?php echo get_theme_mod( 'text_services_dec','Lorem ipsum dolor sit amet consectetur adipisicing elit' ) ?></p>
                 </div>
             </div>
         </div>
@@ -178,7 +157,7 @@ $text_contact_dec = Kirki::get_option( 'saybers_options', 'text_contact_dec' );
 <!--Services Area Ends-->
 
 <!--statistic area starts-->
-<?php if ( true == get_theme_mod( 'toggle_our_statistic', true ) ) : ?>
+<?php if ( "on" == get_theme_mod( 'toggle_our_statistic', 'on' ) ) : ?>
 <div class="statistic-area">
     <div class="sts-overlay section-padding">
         <div class="container">
@@ -224,15 +203,15 @@ $text_contact_dec = Kirki::get_option( 'saybers_options', 'text_contact_dec' );
 <!--statistic area ends-->
 
 <!--team area starts-->
-<?php if ( true == get_theme_mod( 'toggle_our_team', true ) ) : ?>
+<?php if ( "on" == get_theme_mod( 'toggle_our_team', 'on' ) ) : ?>
 <div id="team" class="team-area section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-header">
-                    <h2><?php echo $text_team; ?></h2>
+                    <h2><?php echo get_theme_mod( 'text_team','Our Team' ) ?></h2>
                     <div class="line"><img src="<?php  echo get_site_icon_url() ?>" alt=""></div>
-                    <p class="sub-head"><?php echo $text_team_dec; ?></p>
+                    <p class="sub-head"><?php echo get_theme_mod( 'text_team_dec','Lorem ipsum dolor sit amet consectetur adipisicing elit' ) ?></p>
                 </div>
             </div>
         </div>
@@ -273,16 +252,16 @@ $text_contact_dec = Kirki::get_option( 'saybers_options', 'text_contact_dec' );
 <!--team area ends-->
 
 <!--portfolio area starts-->
-<?php if ( true == get_theme_mod( 'toggle_our_work', true ) ) : ?>
+<?php if ( "on" == get_theme_mod( 'toggle_our_work', 'on' ) ) : ?>
 <div id="portfolio" class="portfolio-area section-padding">
 
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-header">
-                    <h2><?php echo $text_work; ?></h2>
+                    <h2><?php echo get_theme_mod( 'text_work','Our Works' ) ?></h2>
                     <div class="line"><img src="<?php  echo get_site_icon_url() ?>" alt=""></div>
-                    <p class="sub-head"><?php echo $text_work_dec; ?></p>
+                    <p class="sub-head"><?php echo get_theme_mod( 'text_work_dec','Lorem ipsum dolor sit amet consectetur adipisicing elit' ) ?></p>
                 </div>
             </div>
         </div>
@@ -351,20 +330,18 @@ $text_contact_dec = Kirki::get_option( 'saybers_options', 'text_contact_dec' );
 
 <!-- OUR WORK DYNAMIC END HERE-->
 
-
-
 <!--portfolio area ends-->
 
 <!--pricing area starts-->
-<?php if ( true == get_theme_mod( 'toggle_our_pricing', true ) ) : ?>
+<?php if ( "on" == get_theme_mod( 'toggle_our_pricing', 'on' ) ) : ?>
 <div id="pricing" class="pricing-area section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-header">
-                    <h2><?php echo $text_pricing; ?></h2>
+                    <h2><?php echo get_theme_mod( 'text_pricing','Our Pricing' ) ?></h2>
                     <div class="line"><img src="<?php  echo get_site_icon_url() ?>" alt=""></div>
-                    <p class="sub-head"><?php echo $text_pricing_dec; ?></p>
+                    <p class="sub-head"><?php echo get_theme_mod( 'text_pricing_dec','Lorem ipsum dolor sit amet consectetur adipisicing elit' ) ?></p>
                 </div>
             </div>
         </div>
@@ -422,15 +399,15 @@ $text_contact_dec = Kirki::get_option( 'saybers_options', 'text_contact_dec' );
 <!--pricing area ends-->
 
 <!-- News area starts -->
-<?php if ( true == get_theme_mod( 'toggle_our_blog', true ) ) : ?>
+<?php if ( "on" == get_theme_mod( 'toggle_our_blog', 'on' ) ) : ?>
 <section id="blog" class="blog-area section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-header">
-                    <h2><?php echo $text_blog; ?></h2>
+                    <h2><?php echo get_theme_mod( 'text_blog','Our Blog' ) ?></h2>
                     <div class="line"><img src="<?php  echo get_site_icon_url() ?>" alt=""></div>
-                    <p class="sub-head"><?php echo $text_blog_dec; ?></p>
+                    <p class="sub-head"><?php echo get_theme_mod( 'text_blog_dec','Lorem ipsum dolor sit amet consectetur adipisicing elit' ) ?></p>
                 </div>
             </div>
         </div>
@@ -512,25 +489,21 @@ $text_contact_dec = Kirki::get_option( 'saybers_options', 'text_contact_dec' );
             <?php } ?>
             <?php wp_reset_postdata(); ?>
         </div>
-
-
-
-
     </div>
 </section>
 <?php endif; ?>
 <!-- News area ends -->
 
 <!--testimonial Area Starts-->
-<?php if ( true == get_theme_mod( 'toggle_testimonial', true ) ) : ?>
+<?php if ( "on" == get_theme_mod( 'toggle_testimonial', 'on' ) ) : ?>
 <div id="testimonial" class="testimonial-area section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-header">
-                    <h2><?php echo $text_testimonial; ?></h2>
+                    <h2><?php echo get_theme_mod( 'text_testimonial','Our Testimonials' ) ?></h2>
                     <div class="line"><img src="<?php  echo get_site_icon_url() ?>" alt=""></div>
-                    <p class="sub-head"><?php echo $text_testimonial_dec; ?></p>
+                    <p class="sub-head"><?php echo get_theme_mod( 'text_testimonial_dec','Lorem ipsum dolor sit amet consectetur adipisicing elit' ) ?></p>
                 </div>
             </div>
         </div>
@@ -572,15 +545,15 @@ $text_contact_dec = Kirki::get_option( 'saybers_options', 'text_contact_dec' );
 <!--testimonial Area Ends-->
 
 <!--Contact Area Starts-->
-<?php if ( true == get_theme_mod( 'toggle_contact_us', true ) ) : ?>
+<?php if ( "on" == get_theme_mod( 'toggle_contact_us', 'on' ) ) : ?>
 <div id="contact" class="contact-area section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-header">
-                    <h2><?php echo $text_contact; ?></h2>
+                    <h2><?php echo get_theme_mod( 'text_contact','Contact Us' ) ?></h2>
                     <div class="line"><img src="<?php  echo get_site_icon_url() ?>" alt=""></div>
-                    <p class="sub-head"><?php echo $text_contact_dec; ?></p>
+                    <p class="sub-head"><?php echo get_theme_mod( 'text_contact_dec','Lorem ipsum dolor sit amet consectetur adipisicing elit' ) ?></p>
                 </div>
             </div>
         </div>

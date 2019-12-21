@@ -10,11 +10,9 @@ the file
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header">
-                        <h2><?php $heading_two_text = Kirki::get_option( 'saybers_options', 'text_blog' );
-                            echo $heading_two_text; ?></h2>
+                        <h2><?php echo get_theme_mod( 'text_blog','Our Blog' ) ?></h2>
                         <div class="line"><img src="<?php  echo get_site_icon_url() ?>" alt=""></div>
-                        <p class="sub-head"><?php $heading_two_text = Kirki::get_option( 'saybers_options', 'text_blog_dec' );
-                            echo $heading_two_text; ?></p>
+                        <p> class="sub-head"<?php echo get_theme_mod( 'text_blog_dec','Lorem ipsum dolor sit amet consectetur adipisicing elit' ) ?></p>
                     </div>
                 </div>
             </div>
