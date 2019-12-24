@@ -12,7 +12,7 @@ the file
                     <div class="section-header">
                         <h2><?php echo get_theme_mod( 'text_blog','Our Blog' ) ?></h2>
                         <div class="line"><img src="<?php  echo get_site_icon_url() ?>" alt=""></div>
-                        <p> class="sub-head"<?php echo get_theme_mod( 'text_blog_dec','Lorem ipsum dolor sit amet consectetur adipisicing elit' ) ?></p>
+                        <p><?php echo get_theme_mod( 'text_blog_dec','Lorem ipsum dolor sit amet consectetur adipisicing elit' ) ?></p>
                     </div>
                 </div>
             </div>

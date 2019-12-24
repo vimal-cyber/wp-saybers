@@ -10,8 +10,7 @@ Name :
         <div class="row">
             <div class="col-md-12">
                 <div class="section-header">
-                    <h2><?php $heading_two_text = Kirki::get_option( 'saybers_options', 'text_blog' );
-                            echo $heading_two_text; ?></h2>
+                    <h2>Tag Search Results</h2>
                     <div class="line"><img src="<?php  echo get_site_icon_url() ?>" alt=""></div>
                     <p class="sub-head">Results for : <?php single_tag_title(); ?></p>
                 </div>

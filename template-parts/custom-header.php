@@ -26,55 +26,79 @@
     <link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_directory_uri()) ?>/assets/css/font-awesome.min.css">
     <!--Bootstrap css-->
     <link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_directory_uri()) ?>/assets/css/bootstrap.min.css">
-
     <!--Magnific popup css-->
     <link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_directory_uri()) ?>/assets/css/magnific-popup.css">
-
     <!--Animate css-->
     <link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_directory_uri()) ?>/assets/css/animate.css">
-
     <!--icon css-->
     <link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_directory_uri()) ?>/assets/css/line-icons.min.css">
-
     <!--Owl carousel css-->
     <link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_directory_uri()) ?>/assets/css/owl.carousel.css">
     <link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_directory_uri()) ?>/assets/css/owl.theme.default.css">
-
-
-
     <!--responsive css-->
     <link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_directory_uri()) ?>/assets/css/responsive.css">
     <!--Comments js power wp-->
     <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
-    <style>
+<style>
+    div.navbar-collapse.collapse.in,
+    header.nav-area.navbar-fixed-top.sticky_navigation {
+        background-color:<?php echo get_theme_mod( 'nav_bg_color', '#ffffff;' ) ?>
+    }
+    .sticky_navigation div.menu > ul li a,
+    .sticky_navigation .navbar-brand {
+        color:<?php echo get_theme_mod( 'nav_text_color', '#000000;' ) ?>
+    }
+    div.menu > ul li.current_page_item > a,
+    .sticky_navigation div.menu > ul li.current_page_item > a {
+        color:<?php echo get_theme_mod( 'nav_text_active_color', '#bb8c4b;' ) ?>
+    }
     
-.main-menu {
-    margin-top: 10px !important;
+    .section-header h2 {
+        color:<?php echo get_theme_mod( 'heading_color', '#333333;' ) ?>/*headings */
+    }
+    .section-header .line::before,
+    .section-header .line::after {
+        background:<?php echo get_theme_mod( 'line_color', '#333333') ?>/*underline*/
+    }
+    p.sub-head {
+        color:<?php echo get_theme_mod( 'one_line_color', '#333333') ?>/*one line dec*/
+    }
+    /* all black text */
+    div.single-about p,
+    h4,
+    ul.port-nav-list li a,
+    h3,
+    body,
+    .opening-hours-wrap h3 {
+        color:<?php echo get_theme_mod( 'black_text_color', '#333333') ?>
+    }
+    /* all white text */
+    .topcontrol,
+    .team-social-icons a,
+    a.bordered-btn,
+    .blog-content .btn,
+    .btn.btn-send,
+    .footer-bottom p {
+        color:<?php echo get_theme_mod( 'white_text_color','#ffffff') ?>
+    }
+    /* brown background */
+    .topcontrol,
+    .team-social-icons,
+    a.bordered-btn,
+    .blog-content .btn:hover,
+    .btn.btn-send {
+        background:<?php echo get_theme_mod( 'brown_bg_color', '#bb8c4b;' ) ?>
+    }
+    /* Scree size */
+    @media only screen and (max-width: 767px) {
+        div.menu > ul li a {
+            color:<?php echo get_theme_mod( 'nav_text_color', '#000000' ) ?>!important;
         }
-
-.sticky_navigation .main-menu {
-    margin-top: 0px !important;
-}
-
-.nav-area {
-    background: #ffffff;
-    height: 80px !important;
-}
-
-.nav-area.sticky_navigation{
-    height: 65px !important;
+        div.menu > ul li.current_page_item > a {
+            color:<?php echo get_theme_mod( 'nav_text_active_color', '#bb8c4b' ) ?>!important;
         }
-.nav-area .nav li a {
-    color: #333333;
-}
-.nav-area .nav li.current_page_item > a {
-    color: #BB8C4B;
-}
-.nav-area .navbar-brand {
-    color: #333333;
-}
-    
-    </style>
+    }
+</style>
     
     <?php wp_head() ?>
 
@@ -106,15 +130,11 @@
 
                             <div class="navbar-collapse collapse">
                                 <nav>
-                                    <ul class="nav navbar-nav navbar-right" style="color:black;">
-                                        <?php 
-                                        wp_nav_menu( array( 
-                                            'theme_location'  => 'primary',
-                                            'container'       => ''
-                                
-                                        ) );
-                                        ?>
-                                    </ul>
+                                    <?php 
+                                    wp_nav_menu( array( 
+                                        'theme_location'  => 'primary',
+                                    ) );
+                                    ?>
                                 </nav>
                             </div>
                         </div>

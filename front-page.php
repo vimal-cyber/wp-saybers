@@ -46,14 +46,11 @@ $service_description  = get_field('service_description');
                                     <a class="active my-btn-1" href="#contact">Make Appointment</a>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
 </div>

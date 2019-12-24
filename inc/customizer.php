@@ -3,6 +3,21 @@
 
 */
 
+//radio box sanitization function
+        function saybers_sanitize_radio( $input, $setting ){
+          
+            //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
+            $input = sanitize_key($input);
+  
+            //get the list of possible radio box options 
+            $choices = $setting->manager->get_control( $setting->id )->choices;
+                              
+            //return input if valid or return default option
+            return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
+              
+        }
+
+
 function saybers_customize_register( $wp_customize ) {
   // Do stuff with $wp_customize, the WP_Customize_Manager object.
   $wp_customize->add_panel( 'saybers settings', array(
@@ -25,8 +40,7 @@ function saybers_customize_register( $wp_customize ) {
     'theme_supports' => '', // Rarely needed.
     'default' => 'on',
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'saybers_sanitize_radio', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'toggle_about_us', array(
@@ -46,8 +60,7 @@ function saybers_customize_register( $wp_customize ) {
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( 'About Us', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'text_about', array(
@@ -64,8 +77,7 @@ function saybers_customize_register( $wp_customize ) {
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'text_about_dec', array(
@@ -82,8 +94,7 @@ function saybers_customize_register( $wp_customize ) {
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( '25 Years of Experience', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'text_about_sub_heading', array(
@@ -100,8 +111,7 @@ function saybers_customize_register( $wp_customize ) {
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'text_about_sub_dec', array(
@@ -118,8 +128,7 @@ function saybers_customize_register( $wp_customize ) {
     'theme_supports' => '', // Rarely needed.
     'default' => 'images/about/about.jpg',
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'image_about', array(
@@ -139,8 +148,7 @@ function saybers_customize_register( $wp_customize ) {
     'theme_supports' => '', // Rarely needed.
     'default' => 'https://www.youtube.com/watch?v=E7A5rXHp_AI',
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'esc_url_raw', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'link_about', array(
@@ -165,8 +173,7 @@ function saybers_customize_register( $wp_customize ) {
     'theme_supports' => '', // Rarely needed.
     'default' => 'on',
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'saybers_sanitize_radio', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'toggle_our_services', array(
@@ -186,8 +193,7 @@ function saybers_customize_register( $wp_customize ) {
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( 'Our Services', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', 
   ) );
 
   $wp_customize->add_control( 'text_services', array(
@@ -204,8 +210,7 @@ function saybers_customize_register( $wp_customize ) {
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'text_services_dec', array(
@@ -230,8 +235,7 @@ function saybers_customize_register( $wp_customize ) {
     'theme_supports' => '', // Rarely needed.
     'default' => 'on',
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'saybers_sanitize_radio', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'toggle_our_statistic', array(
@@ -259,8 +263,7 @@ $wp_customize->add_section( 'saybers_our_team', array(
     'theme_supports' => '', // Rarely needed.
     'default' => 'on',
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'saybers_sanitize_radio', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'toggle_our_team', array(
@@ -280,8 +283,7 @@ $wp_customize->add_section( 'saybers_our_team', array(
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( 'Our Team', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'text_team', array(
@@ -298,8 +300,7 @@ $wp_customize->add_section( 'saybers_our_team', array(
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'text_team_dec', array(
@@ -324,8 +325,7 @@ $wp_customize->add_section( 'saybers_our_work', array(
     'theme_supports' => '', // Rarely needed.
     'default' => 'on',
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'saybers_sanitize_radio', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'toggle_our_work', array(
@@ -345,8 +345,7 @@ $wp_customize->add_section( 'saybers_our_work', array(
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( 'Our Work', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'text_work', array(
@@ -363,8 +362,7 @@ $wp_customize->add_section( 'saybers_our_work', array(
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'text_work_dec', array(
@@ -389,8 +387,7 @@ $wp_customize->add_section( 'saybers_our_pricing', array(
     'theme_supports' => '', // Rarely needed.
     'default' => 'on',
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'saybers_sanitize_radio', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'toggle_our_pricing', array(
@@ -410,8 +407,7 @@ $wp_customize->add_section( 'saybers_our_pricing', array(
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( 'Our Pricing', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'text_pricing', array(
@@ -428,8 +424,7 @@ $wp_customize->add_section( 'saybers_our_pricing', array(
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'text_pricing_dec', array(
@@ -454,8 +449,7 @@ $wp_customize->add_section( 'saybers_our_blog', array(
     'theme_supports' => '', // Rarely needed.
     'default' => 'on',
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'saybers_sanitize_radio', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'toggle_our_blog', array(
@@ -475,8 +469,7 @@ $wp_customize->add_section( 'saybers_our_blog', array(
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( 'Our Blog', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'text_blog', array(
@@ -493,8 +486,7 @@ $wp_customize->add_section( 'saybers_our_blog', array(
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'text_blog_dec', array(
@@ -519,8 +511,7 @@ $wp_customize->add_section( 'saybers_testimonial', array(
     'theme_supports' => '', // Rarely needed.
     'default' => 'on',
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'saybers_sanitize_radio', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'toggle_testimonial', array(
@@ -540,8 +531,7 @@ $wp_customize->add_section( 'saybers_testimonial', array(
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( 'Our Testimonials', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'text_testimonial', array(
@@ -558,8 +548,7 @@ $wp_customize->add_section( 'saybers_testimonial', array(
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'text_testimonial_dec', array(
@@ -584,8 +573,7 @@ $wp_customize->add_section( 'saybers_contact_us', array(
     'theme_supports' => '', // Rarely needed.
     'default' => 'on',
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'saybers_sanitize_radio', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'toggle_contact_us', array(
@@ -605,8 +593,7 @@ $wp_customize->add_section( 'saybers_contact_us', array(
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( 'Contact Us', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'text_contact', array(
@@ -623,8 +610,7 @@ $wp_customize->add_section( 'saybers_contact_us', array(
     'theme_supports' => '', // Rarely needed.
     'default' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit', 'saybers' ),
     'transport' => 'refresh', // or postMessage
-    'sanitize_callback' => '',
-    'sanitize_js_callback' => '', // Basically to_json.
+    'sanitize_callback' => 'wp_filter_nohtml_kses', // Basically to_json.
   ) );
 
   $wp_customize->add_control( 'text_contact_dec', array(
@@ -635,5 +621,172 @@ $wp_customize->add_section( 'saybers_contact_us', array(
     'active_callback' => 'is_front_page',
   ) );
 
+  /*************************************************COLOR CUSTOMIZE****************************************************/
+ 
+  $wp_customize->add_section( 'saybers_custom_colors', array(
+    'title'          => esc_html__( 'Customize Theme Colors', 'saybers' ),
+    'description'    => esc_html__( 'Customize Theme Colors', 'saybers' ),
+    'panel'          => 'saybers settings',
+  ) );
+
+  $wp_customize->add_setting( 'nav_bg_color', array(
+    'type' => 'theme_mod', // or 'option'
+    'capability' => 'edit_theme_options',
+    'default' => '#ffffff',
+    'transport' => 'refresh', // or postMessage
+    'sanitize_callback' => 'sanitize_hex_color',
+  ) );
+
+  $wp_customize->add_control( 'nav_bg_color', array(
+    'type'     => 'color',
+    'priority' => 10, // Within the section.
+    'section' => 'saybers_custom_colors', // Required, core or custom.
+    'label' => esc_html__( 'Clolor For Header', 'saybers' ),
+    'description' => __( 'changes on scrool.' ),
+  ) );
+
+  $wp_customize->add_setting( 'nav_text_color', array(
+    'type' => 'theme_mod', // or 'option'
+    'capability' => 'edit_theme_options',
+    'default' => '#000000',
+    'transport' => 'refresh', // or postMessage
+    'sanitize_callback' => 'sanitize_hex_color',
+  ) );
+
+  $wp_customize->add_control( 'nav_text_color', array(
+    'type'     => 'color',
+    'priority' => 10, // Within the section.
+    'section' => 'saybers_custom_colors', // Required, core or custom.
+    'label' => esc_html__( 'Color For Header Text ', 'saybers' ),
+    'description' => __( 'changes on scroll' ),
+  ) );
+
+  $wp_customize->add_setting( 'nav_text_active_color', array(
+    'type' => 'theme_mod', // or 'option'
+    'capability' => 'edit_theme_options',
+    'default' => '#bb8c4b',
+    'transport' => 'refresh', // or postMessage
+    'sanitize_callback' => 'sanitize_hex_color',
+  ) );
+
+  $wp_customize->add_control( 'nav_text_active_color', array(
+    'type'     => 'color',
+    'priority' => 10, // Within the section.
+    'section' => 'saybers_custom_colors', // Required, core or custom.
+    'label' => esc_html__( 'Color For Active text ', 'saybers' ),
+    'description' => __( 'active nav element visivle on scroll.' ),
+  ) );
+
+  $wp_customize->add_setting( 'brown_bg_color', array(
+    'type' => 'theme_mod', // or 'option'
+    'capability' => 'edit_theme_options',
+    'default' => '#bb8c4b',
+    'transport' => 'refresh', // or postMessage
+    'sanitize_callback' => 'sanitize_hex_color',
+  ) );
+
+  $wp_customize->add_control( 'brown_bg_color', array(
+    'type'     => 'color',
+    'priority' => 10, // Within the section.
+    'section' => 'saybers_custom_colors', // Required, core or custom.
+    'label' => esc_html__( 'Color for backgrounds ', 'saybers' ),
+    'description' => __( 'color of buttons' ),
+  ) );
+
+  $wp_customize->add_setting( 'heading_color', array(
+    'type' => 'theme_mod', // or 'option'
+    'capability' => 'edit_theme_options',
+    'default' => '#333333',
+    'transport' => 'refresh', // or postMessage
+    'sanitize_callback' => 'sanitize_hex_color',
+  ) );
+
+  $wp_customize->add_control( 'heading_color', array(
+    'type'     => 'color',
+    'priority' => 10, // Within the section.
+    'section' => 'saybers_custom_colors', // Required, core or custom.
+    'label' => esc_html__( 'Color For Headings ', 'saybers' ),
+    'description' => __( 'color for each section heading.' ),
+  ) );
+
+  $wp_customize->add_setting( 'line_color', array(
+    'type' => 'theme_mod', // or 'option'
+    'capability' => 'edit_theme_options',
+    'default' => '#333333',
+    'transport' => 'refresh', // or postMessage
+    'sanitize_callback' => 'sanitize_hex_color',
+  ) );
+
+  $wp_customize->add_control( 'line_color', array(
+    'type'     => 'color',
+    'priority' => 10, // Within the section.
+    'section' => 'saybers_custom_colors', // Required, core or custom.
+    'label' => esc_html__( 'Color For Underline ', 'saybers' ),
+    'description' => __( 'color of the underline in each section.' ),
+  ) );
+
+  $wp_customize->add_setting( 'one_line_color', array(
+    'type' => 'theme_mod', // or 'option'
+    'capability' => 'edit_theme_options',
+    'default' => '#333333',
+    'transport' => 'refresh', // or postMessage
+    'sanitize_callback' => 'sanitize_hex_color',
+  ) );
+
+  $wp_customize->add_control( 'one_line_color', array(
+    'type'     => 'color',
+    'priority' => 10, // Within the section.
+    'section' => 'saybers_custom_colors', // Required, core or custom.
+    'label' => esc_html__( 'Color For one line description ', 'saybers' ),
+    'description' => __( 'color of one line description in each section.' ),
+  ) );
+
+  $wp_customize->add_setting( 'white_text_color', array(
+    'type' => 'theme_mod', // or 'option'
+    'capability' => 'edit_theme_options',
+    'default' => '#ffffff',
+    'transport' => 'refresh', // or postMessage
+    'sanitize_callback' => 'sanitize_hex_color',
+  ) );
+
+  $wp_customize->add_control( 'white_text_color', array(
+    'type'     => 'color',
+    'priority' => 10, // Within the section.
+    'section' => 'saybers_custom_colors', // Required, core or custom.
+    'label' => esc_html__( 'Color for white text. ', 'saybers' ),
+    'description' => __( 'color of button,price texts, etc.' ),
+  ) );
+
+  $wp_customize->add_setting( 'black_text_color', array(
+    'type' => 'theme_mod', // or 'option'
+    'capability' => 'edit_theme_options',
+    'default' => '#333333',
+    'transport' => 'refresh', // or postMessage
+    'sanitize_callback' => 'sanitize_hex_color',
+  ) );
+
+  $wp_customize->add_control( 'black_text_color', array(
+    'type'     => 'color',
+    'priority' => 10, // Within the section.
+    'section' => 'saybers_custom_colors', // Required, core or custom.
+    'label' => esc_html__( 'Color for black text.', 'saybers' ),
+    'description' => __( 'color of sub headings,blogs,peragraphs etc.' ),
+  ) );
+    
+    $wp_customize->add_setting( 'brown_text_color', array(
+      'type' => 'theme_mod', // or 'option'
+      'capability' => 'edit_theme_options',
+      'default' => '#bb8c4b',
+      'transport' => 'refresh', // or postMessage
+      'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+  
+    $wp_customize->add_control( 'brown_text_color', array(
+      'type'     => 'color',
+      'priority' => 10, // Within the section.
+      'section' => 'saybers_custom_colors', // Required, core or custom.
+      'label' => esc_html__( 'all brown text', 'saybers' ),
+      'description' => __( 'color for sub headings price,works,stats etc.' ),
+    ) );
 }
 add_action( 'customize_register', 'saybers_customize_register' );
