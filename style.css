@@ -8,7 +8,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: saybers
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: portfolio, blog, grid-layout, one-column, custom-colors, footer-widgets, full-width-template, theme-options,  custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -528,12 +528,6 @@ template {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-div.side-l {
-    width: 30%;
-    float: left;
-    margin-left: 75px;
-}
-
 div.block.side-widget h3 {
     color: #e64747;
 }
@@ -551,11 +545,6 @@ div.block.side-widget p {
     color: #ea9c2c;
 }
 
-div.side {
-    width: 30%;
-    float: right;
-    margin-right: 5px;
-}
 
 div.block {
     padding: 0px 15px 0px 15px;
@@ -786,6 +775,10 @@ Table of content
 
 html,body{
     height: 100%;
+}
+
+body.no_bg {
+    background-image: none !important;
 }
 
 body{

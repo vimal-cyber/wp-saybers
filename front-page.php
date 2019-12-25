@@ -1,5 +1,5 @@
 <?php
-
+if ( function_exists( 'get_field' ) ) {
 // Custom Fiedds
 $work_type  = get_field('work_type');
 // Testimonial Section(Clients Says)
@@ -14,7 +14,7 @@ $linkedin_profile_link  = get_field('linkedin_profile_link');
 // Services section
 $service_icon  = get_field('service_icon');
 $service_description  = get_field('service_description');
-
+}
 ?>
 <?php get_header(); ?>
 <!--banner area starts-->
@@ -161,34 +161,34 @@ $service_description  = get_field('service_description');
             <div class="row">
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="single-count count-one xs-mb-30 sm-mb-30">
-                        <i class="icon icon-clock"></i>
-                        <h2 class="count">25</h2>
+                        <i class="<?php echo get_theme_mod( 'one_stat_icon','icon icon-clock' ) ?>"></i>
+                        <h2 class="count"><?php echo get_theme_mod( 'one_stat_num','25' ) ?></h2>
                         <!--edit here-->
-                        <p>Years of Experience</p>
+                        <p><?php echo get_theme_mod( 'one_stat_dec','Years of Experience' ) ?></p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="single-count count-two xs-mb-30 sm-mb-30">
-                        <i class="icon icon-genius"></i>
-                        <h2 class="count">75</h2>
+                        <i class="<?php echo get_theme_mod( 'two_stat_icon','icon icon-genius' ) ?>"></i>
+                        <h2 class="count"><?php echo get_theme_mod( 'two_stat_num','75' ) ?></h2>
                         <!--edit here-->
-                        <p>Efficient Barbers</p>
+                        <p><?php echo get_theme_mod( 'two_stat_dec','Efficient Barbers' ) ?></p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="single-count count-three xs-mb-30">
-                        <i class="icon icon-happy"></i>
-                        <h2 class="count">950</h2>
+                        <i class="<?php echo get_theme_mod( 'three_stat_icon','icon icon-happy' ) ?>"></i>
+                        <h2 class="count"><?php echo get_theme_mod( 'three_stat_num','950' ) ?></h2>
                         <!--edit here-->
-                        <p>Happy Customers</p>
+                        <p><?php echo get_theme_mod( 'three_stat_dec','Happy Customers' ) ?></p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="single-count count-four">
-                        <i class="icon icon-trophy"></i>
-                        <h2 class="count">150</h2>
+                        <i class="<?php echo get_theme_mod( 'four_stat_icon','icon icon-trophy' ) ?>"></i>
+                        <h2 class="count"><?php echo get_theme_mod( 'four_stat_num','150' ) ?></h2>
                         <!--edit here-->
-                        <p>Business Awards Won</p>
+                        <p><?php echo get_theme_mod( 'four_stat_dec','Business Awards Won' ) ?></p>
                     </div>
                 </div>
             </div>

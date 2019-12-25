@@ -39,18 +39,20 @@
     <link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_directory_uri()) ?>/assets/css/responsive.css">
     <!--Comments js power wp-->
     <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
-<style>
+<style> 
     div.navbar-collapse.collapse.in,
     header.nav-area.navbar-fixed-top.sticky_navigation {
         background-color:<?php echo get_theme_mod( 'nav_bg_color', '#ffffff;' ) ?>
     }
+    .navbar-brand,
+    div.menu > ul li a,
     .sticky_navigation div.menu > ul li a,
     .sticky_navigation .navbar-brand {
-        color:<?php echo get_theme_mod( 'nav_text_color', '#000000;' ) ?>
+        color:<?php echo get_theme_mod( 'nav_text_color', '#000000' ) ?>!important;
     }
     div.menu > ul li.current_page_item > a,
     .sticky_navigation div.menu > ul li.current_page_item > a {
-        color:<?php echo get_theme_mod( 'nav_text_active_color', '#bb8c4b;' ) ?>
+        color:<?php echo get_theme_mod( 'nav_text_active_color', '#bb8c4b' ) ?>!important;
     }
     
     .section-header h2 {
@@ -89,6 +91,15 @@
     .btn.btn-send {
         background:<?php echo get_theme_mod( 'brown_bg_color', '#bb8c4b;' ) ?>
     }
+    /*Footer color*/
+    div.block.side-widget h3 {
+    color: <?php echo get_theme_mod( 'foot_hd_color', '#e64747' ) ?>
+    }
+    .side-widget li,
+    div.block.side-widget p,
+    .side-widget li a {
+    color: <?php echo get_theme_mod( 'foot_link_color', '#ea9c2c' ) ?>;
+    }
     /* Scree size */
     @media only screen and (max-width: 767px) {
         div.menu > ul li a {
@@ -103,7 +114,7 @@
     <?php wp_head() ?>
 
 </head>
-<body <?php body_class(); ?> >
+<body class="no_bg" <?php body_class(); ?> >
     <!--preloader starts-->
 
     <div class="loader_bg"><div class="loader"></div></div>

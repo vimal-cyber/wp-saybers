@@ -85,6 +85,11 @@ if ( ! function_exists( 'saybers_theme_setup' ) ) :
 		'width'       => 40,
 		'flex-height' => true,
 		) );
+
+		function saybers_custom_excerpt_length( $length ) {
+			return 23;
+		}
+		add_filter( 'excerpt_length', 'saybers_custom_excerpt_length', 999 );
 	}
 endif;
 
@@ -147,14 +152,15 @@ add_action( 'widgets_init', 'saybers_widgets_init' );
 * Registers an editor stylesheet for the theme.
 */
 function wpdocs_theme_add_editor_styles() {
-add_editor_style( 'custom-editor-style.css' );
+add_editor_style( get_stylesheet_uri() );
 }
 add_action( 'admin_init', 'wpdocs_theme_add_editor_styles' );
 
 function saybers_scripts(){
     wp_enqueue_style('style', get_stylesheet_uri());
     wp_enqueue_script('jquery');
-    wp_enqueue_script('saybers-bootstrap', get_template_directory_uri().'/assets/js/bootstrap.min.js');
+	wp_enqueue_script('saybers-bootstrap', get_template_directory_uri().'/assets/js/bootstrap.min.js');
+	wp_enqueue_script('saybers-fa','https://kit.fontawesome.com/bd6e0dc686.js', null, null, true );
     wp_enqueue_script('saybers-jquery.magnific-popup', get_template_directory_uri().'/assets/js/jquery.magnific-popup.min.js');
     wp_enqueue_script('saybers-owl.carousel', get_template_directory_uri().'/assets/js/owl.carousel.js');
     wp_enqueue_script('saybers-imagesloaded', get_template_directory_uri().'/assets/js/imagesloaded.min.js');

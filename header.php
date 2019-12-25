@@ -123,6 +123,19 @@
     .btn.btn-send {
         background:<?php echo get_theme_mod( 'brown_bg_color', '#bb8c4b;' ) ?>
     }
+    ul.port-nav-list li a.active
+    .border-t {
+        border: 1px solid <?php echo get_theme_mod( 'brown_bg_color', '#bb8c4b;' ) ?>
+    }
+    /*Footer color*/
+    div.block.side-widget h3 {
+    color: <?php echo get_theme_mod( 'foot_hd_color', '#e64747' ) ?>
+    }
+    .side-widget li,
+    div.block.side-widget p,
+    .side-widget li a {
+    color: <?php echo get_theme_mod( 'foot_link_color', '#ea9c2c' ) ?>;
+    }
     /*Screen size*/
     @media only screen and (max-width: 767px) {
         div.menu > ul li a {
