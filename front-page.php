@@ -345,48 +345,48 @@ $service_description  = get_field('service_description');
         <div class="row">
             <div class="col-md-4 col-sm-6">
                 <div class="single-pricing-box price-bg-1 xs-mb-30 sm-mb-30">
-                    <h3>Hair Wash</h3>
+                    <h3><?php esc_html_e('Hair Wash', 'saybers'); ?></h3>
                     <!--<h3 class="pricing-count">$15/mo</h3>-->
                     <div class="pricing-lists">
                         <ul>
-                            <li><span class="pri">Hair Wash</span> <span class="daam">$12</span></li>
-                            <li><span class="pri">Hair Wash</span> <span class="daam">$12</span></li>
-                            <li><span class="pri">Hair Wash</span> <span class="daam">$12</span></li>
+                            <li><span class="pri"><?php esc_html_e('Hair Wash', 'saybers'); ?></span> <span class="daam"><?php esc_html_e('$12', 'saybers'); ?></span></li>
+                            <li><span class="pri"><?php esc_html_e('Hair Wash', 'saybers'); ?></span> <span class="daam"><?php esc_html_e('$12', 'saybers'); ?></span></li>
+                            <li><span class="pri"><?php esc_html_e('Hair Wash', 'saybers'); ?></span> <span class="daam"><?php esc_html_e('$12', 'saybers'); ?></span></li>
                         </ul>
                     </div>
-                    <a href="#" class="bordered-btn">Appointment</a>
+                    <a href="#" class="bordered-btn"><?php esc_html_e('Appointment', 'saybers'); ?></a>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6">
                 <div class="single-pricing-box price-bg-2 xs-mb-30 sm-mb-30">
-                    <h3>Hair Cutting</h3>
+                    <h3><?php esc_html_e('Hair Cutting', 'saybers'); ?></h3>
                     <!--<h3 class="pricing-count">$25/mo</h3>-->
 
                     <div class="pricing-lists">
                         <ul>
-                            <li><span class="pri">Hair Cutting</span> <span class="daam">$12</span></li>
-                            <li><span class="pri">Hair Cutting</span> <span class="daam">$12</span></li>
-                            <li><span class="pri">Hair Cutting</span> <span class="daam">$12</span></li>
+                            <li><span class="pri"><?php esc_html_e('Hair Cutting', 'saybers'); ?></span> <span class="daam"><?php esc_html_e('$12', 'saybers'); ?></span></li>
+                            <li><span class="pri"><?php esc_html_e('Hair Cutting', 'saybers'); ?></span> <span class="daam"><?php esc_html_e('$12', 'saybers'); ?></span></li>
+                            <li><span class="pri"><?php esc_html_e('Hair Cutting', 'saybers'); ?></span> <span class="daam"><?php esc_html_e('$12', 'saybers'); ?></span></li>
                         </ul>
                     </div>
 
 
-                    <a href="#" class="bordered-btn">Appointment</a>
+                    <a href="#" class="bordered-btn"><?php esc_html_e('Appointment', 'saybers'); ?></a>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 hidden-sm">
                 <div class="single-pricing-box price-bg-3 xs-mb-30">
-                    <h3>Hair Trimming</h3>
+                    <h3><?php esc_html_e('Hair Trimming', 'saybers'); ?></h3>
                     <!--<h3 class="pricing-count">$35/mo</h3>-->
 
                     <div class="pricing-lists">
                         <ul>
-                            <li><span class="pri">Hair Trimming</span> <span class="daam">$12</span></li>
-                            <li><span class="pri">Hair Trimming</span> <span class="daam">$12</span></li>
-                            <li><span class="pri">Hair Trimming</span> <span class="daam">$12</span></li>
+                            <li><span class="pri"><?php esc_html_e('Hair Trimming', 'saybers'); ?></span> <span class="daam"><?php esc_html_e('$12', 'saybers'); ?></span></li>
+                            <li><span class="pri"><?php esc_html_e('Hair Trimming', 'saybers'); ?></span> <span class="daam"><?php esc_html_e('$12', 'saybers'); ?></span></li>
+                            <li><span class="pri"><?php esc_html_e('Hair Trimming', 'saybers'); ?></span> <span class="daam"><?php esc_html_e('$12', 'saybers'); ?></span></li>
                         </ul>
                     </div>
-                    <a href="#" class="bordered-btn">Appointment</a>
+                    <a href="#" class="bordered-btn"><?php esc_html_e('Appointment', 'saybers'); ?></a>
                 </div>
             </div>
         </div>
@@ -434,7 +434,7 @@ $service_description  = get_field('service_description');
                         </a>
 
                         <?php the_excerpt() ?>
-                        <a class="btn" href="#blog-model-<?php echo $x; ?>" data-toggle="modal">Read More</a>
+                        <a class="btn" href="#blog-model-<?php echo $x; ?>" data-toggle="modal"><?php esc_html_e('Read More', 'saybers'); ?></a>
                         <?php $x++; ?>
                     </div>
                 </div>
@@ -473,7 +473,7 @@ $service_description  = get_field('service_description');
                                     <h2><?php the_title() ?></h2>
                                     <p class="blog-meta text-muted">
                                         <span><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><i class="fa fa-user-circle-o"></i><?php echo get_the_author_meta('display_name') ?></a></span>
-                                        <span><i class="fa fa-comment-o"></i><?php echo get_comments_number() ?> Comments</span>
+                                        <span><i class="fa fa-comment-o"></i><?php echo get_comments_number() ?> <?php esc_html_e('Comments', 'saybers'); ?></span>
                                     </p>
                                     <?php the_content(); ?>
                                     <?php $x++; ?>
@@ -527,7 +527,7 @@ $service_description  = get_field('service_description');
                             <p><?php the_field('clients_testimonial'); ?></p>
                             <h5><strong><?php the_field('client_name'); ?></strong></h5>
                             <!--change reviewer name-->
-                            <h6>Customer <?php echo $u; ?></h6>
+                            <h6><?php esc_html_e('Customer', 'saybers'); ?> <?php echo $u; ?></h6>
                         </div>
                     </div>
                     <?php $u++; ?>
@@ -586,7 +586,7 @@ $service_description  = get_field('service_description');
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <button class="btn btn-send" value="">Send message</button>
+                                <button class="btn btn-send" value=""><?php esc_html_e('Send Message', 'saybers'); ?></button>
                             </div>
                         </div>
                     </div>
@@ -597,16 +597,16 @@ $service_description  = get_field('service_description');
 
             <div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1">
                 <div class="opening-hours-wrap mt-30">
-                    <h3>Opening Hours</h3>
+                    <h3><?php esc_html_e('Opening Hours', 'saybers'); ?></h3>
                     <ul class="opening-hours">
-                        <li>Monday<span class="pull-right">8.00 - 19.00</span></li>
-                        <li>Tuesday <span class="pull-right">8.00 - 19.00</span></li>
-                        <li>Wednesday <span class="pull-right">8.00 - 19.00</span></li>
-                        <li>Thrusday <span class="pull-right">8.00 - 19.00</span></li>
-                        <li>Friday <span class="pull-right">8.00 - 19.00</span></li>
-                        <li>Saturday <span class="pull-right">8.00 - 19.00</span></li>
-                        <li>Sunday <span class="pull-right">Closed</span></li>
-                    </ul>
+                        <li><?php esc_html_e('Monday', 'saybers'); ?><span class="pull-right"><?php esc_html_e('8.00 - 19.00', 'saybers'); ?></span></li>
+                        <li><?php esc_html_e('Tuesday', 'saybers'); ?> <span class="pull-right"><?php esc_html_e('8.00 - 19.00', 'saybers'); ?></span></li>
+                        <li><?php esc_html_e('Wednesday', 'saybers'); ?> <span class="pull-right"><?php esc_html_e('8.00 - 19.00', 'saybers'); ?></span></li>
+                        <li><?php esc_html_e('Thrusday', 'saybers'); ?> <span class="pull-right"><?php esc_html_e('8.00 - 19.00', 'saybers'); ?></span></li>
+                        <li><?php esc_html_e('Friday', 'saybers'); ?> <span class="pull-right"><?php esc_html_e('8.00 - 19.00', 'saybers'); ?></span></li>
+                        <li><?php esc_html_e('Saturday', 'saybers'); ?> <span class="pull-right"><?php esc_html_e('8.00 - 19.00', 'saybers'); ?></span></li>
+                        <li><?php esc_html_e('Sunday', 'saybers'); ?> <span class="pull-right"><?php esc_html_e('Closed</span></li>
+', 'saybers'); ?>                    </ul>
                 </div>
             </div>
 
